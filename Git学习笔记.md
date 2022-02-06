@@ -96,13 +96,13 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 `git remote add origin git@github.com:<github_account>/<repository_name>.git`
 
-`origin`为远程库的名称，可自改
+`origin`为远程库的名称，可自改(下同)
 
 ### 推送本地库内容至远程库
 
 `git push -u origin master`(需输入yes确认推送上传)
 
-`git push origin master`
+`git push origin <name>`
 
 ### 删除远程库（解除本地和远程的绑定关系）
 
@@ -112,11 +112,27 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 真正删除远程库，需登录GitHub，后台页面删除
 
+### 查看远程库信息
+
+` git remote` 
+
+`git remote -v `   //显示更详细信息
+
 ### 远程库克隆
 
 `git clone git@github.com:<github_account>/<repository_name>.git`
 
 git支持多种协议，包括HTTPS，但SSH最快
+
+#### 远程库的分支克隆至本地
+
+`git checkout -b dev origin/dev`   //创建本地dev分支
+
+`git branch --set-upstream-to=origin/dev dev`  //将本地dev与origin/dev链接起来
+
+### 将远程库某个分支的更新取回至本地
+
+`git pull origin  <branch>: <local_baranch>`
 
 ## 分支管理
 
@@ -135,6 +151,8 @@ git checkout <name> //切换分支
 
 `git branch -d <name>`  // 删除< name >分支
 
+`git branch -D <name>`  //强制删除，无视Git提醒
+
 `git switch <name>`  //切换分支
 
 `git switch -c <name>`   //创建并切换分支
@@ -146,6 +164,20 @@ git checkout <name> //切换分支
 ## 临时存储功能
 
 `git stash`   //将当前工作区“存储起来”，等恢复现场后继续工作
+
+`git stash apply `  //恢复
+
+`git  stash drop `  //删除
+
+`git stash pop`   /恢复并删除
+
+`git stash list`   //恢复列表
+
+`git stash apply stash@{0}`    //恢复指定的stash
+
+ ## 将其他分支的修改提交至当前分支
+
+`git cherry-pick <commit>`
 
 
 
