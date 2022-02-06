@@ -98,3 +98,14 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 `origin`为远程库的名称，可自改
 
+#### 推送本地库内容至远程库
+
+`git push -u origin master`(需输入yes确认推送上传)
+
+### 删除远程库（解除本地和远程的绑定关系）
+
+`git remote rm <name>`
+
+使用前，建议先用`git remote -v`查看远程库信息：
+
+真正删除远程库，需登录GitHub，后台页面删除
