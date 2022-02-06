@@ -65,13 +65,13 @@
 
 ### 删除文件
 
-```rm <file>``` 工作区文件删除
+```rm <file>```   // 工作区文件删除
 
 `git rm <file> `并 `git commit` 从版本库中删除
 
-### 远程仓库
+## 远程仓库
 
-#### PC操作：
+### PC操作：
 
 git-bash-shell
 
@@ -87,10 +87,10 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 `id_rsa.pub`是公钥，可以放心地告诉任何人
 
-#### git操作：
+### git操作：
 右上角头像--`setting`--`SSH and GPG keys`-- `new SSH key`---`随意title`---`复制公钥key`---`Add SSH key`---done
 
-#### PC操作：
+### PC操作：
 
 本地链接：本地库下运行命令：
 
@@ -98,9 +98,11 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 `origin`为远程库的名称，可自改
 
-#### 推送本地库内容至远程库
+### 推送本地库内容至远程库
 
 `git push -u origin master`(需输入yes确认推送上传)
+
+`git push origin master`
 
 ### 删除远程库（解除本地和远程的绑定关系）
 
@@ -109,3 +111,43 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 使用前，建议先用`git remote -v`查看远程库信息：
 
 真正删除远程库，需登录GitHub，后台页面删除
+
+### 远程库克隆
+
+`git clone git@github.com:<github_account>/<repository_name>.git`
+
+git支持多种协议，包括HTTPS，但SSH最快
+
+## 分支管理
+
+`git checkout -b dev`   //创建dev分支 -b表示创建并切换相当于两条命令
+
+```
+git branch <name>  //创建分支
+
+git checkout <name> //切换分支
+
+```
+
+`git branch`     //查看当前分支 当前分支有*标识
+
+`git merge <name>`  //将< name>分支合并到master分支上
+
+`git branch -d <name>`  // 删除< name >分支
+
+`git switch <name>`  //切换分支
+
+`git switch -c <name>`   //创建并切换分支
+
+`git log --graph`   //查看分支合并图
+
+`git merge --no-ff -m "merge with no-ff" <branch_name>`不使用快速合并(Fast forward)
+
+## 临时存储功能
+
+`git stash`   //将当前工作区“存储起来”，等恢复现场后继续工作
+
+
+
+
+
