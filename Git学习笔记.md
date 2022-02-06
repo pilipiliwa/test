@@ -102,7 +102,7 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 `git push -u origin master`(需输入yes确认推送上传)
 
-`git push origin <name>`
+`git push origin <lacal_branch>:<origin_branch>`
 
 ### 删除远程库（解除本地和远程的绑定关系）
 
@@ -132,7 +132,7 @@ git支持多种协议，包括HTTPS，但SSH最快
 
 ### 将远程库某个分支的更新取回至本地
 
-`git pull origin  <branch>: <local_baranch>`
+`git pull origin  <origin_branch>:<local_baranch>`
 
 ## 分支管理
 
