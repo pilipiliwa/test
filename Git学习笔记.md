@@ -179,7 +179,57 @@ git checkout <name> //切换分支
 
 `git cherry-pick <commit>`
 
+## 变基
 
+`git rebase`    //把本地未push的分叉提交历史整理成直线
 
+rebase的目的是使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比
 
+## 标签管理
+
+`git tag <tag_name>`   //给当前分支最新commit（HEAD）打上tag
+
+`git tag <tag_name> <commit_ID>`   //给特定commit打上tag
+
+`git show <tagname>`   //查看标签信息
+
+`git tag -a <tag_name> -m "<tag_mesage>"`  //-a 指定标签名  -m指定说明文字
+
+`git tag`   //查看所有标签
+
+`git tag -d <tag_name>`   //删除标签
+
+`git push origin <tag_name>`   //推送标签至远程
+
+`git push origin --tags`   //一次性推送全部尚未推送到远程的本地标签
+
+``` 
+git tag -d <tag_name>   //先删除本地tag
+git push origin :refs/tags/<tag_name>  //远程删除
+```
+
+## .gitignore
+
+忽略某些文件/夹，不放入库中
+
+举例：
+
+```
+# 排除所有.开头的隐藏文件:
+.*
+# 排除所有.class文件:
+*.class
+
+# 不排除.gitignore和App.class:
+!.gitignore
+!App.class
+```
+
+.gitignore文件本身要放到版本库里，并且可以对.gitignore做版本管理
+
+## config
+
+在\.git下
+
+可以实现 命令缩写 更好的输出 color
 
