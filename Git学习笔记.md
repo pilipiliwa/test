@@ -102,7 +102,7 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 `git push -u origin master`(需输入yes确认推送上传)
 
-`git push origin <lacal_branch>:<origin_branch>`
+`git push origin <lacal_branch>:<origin_branch>`   //推送本地库某分支到远程库某分支
 
 ### 删除远程库（解除本地和远程的绑定关系）
 
@@ -114,7 +114,7 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 ### 查看远程库信息
 
-` git remote` 
+` git remote`   //查看远程库的信息
 
 `git remote -v `   //显示更详细信息
 
